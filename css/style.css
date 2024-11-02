@@ -566,9 +566,23 @@ form a{
 /*----------media query for each and every item display on mobile or screen size less than 600px---------------*/
 
 @media only screen and (max-width: 600px){
+    .range-sel{
+        width: 100%;
+
+    }
+    select{
+        width: 100%;
+    
+    }
+    .row-2{
+        display: flex;
+        flex-direction: column;
+        gap: 10px 20px;
+    }
 
     .row{/*this is the row which we have used in every section*/
         text-align: center;/*when open on mobile, we make text in every row to be center align*/
+        display: flex;
     }
     .col-2, .col-3,.col-4{/*for all columns view on mobile, we want one column single line occupying 100% width we not want 3 or 4 in single line*/
         flex-basis: 100%;
@@ -587,6 +601,16 @@ form a{
     /*for cart page*/
     .cart-info p{
         display:none;/*hide product name in smaller screen*/
+    }
+
+}
+/*media query for tablette */
+@media only screen and (min-width: 700px){
+    .row{
+        display: flex;
+    }
+    .col-4 {
+        flex-basis: 50%; /* Chaque colonne prend 50% pour afficher 2 éléments par ligne */
     }
 
 }
