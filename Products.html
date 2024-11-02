@@ -39,12 +39,12 @@
 
             <ul class="menu-bar">
 
-                <li>&#36;0.00</li>
-                <li><i class='fas fa-shopping-cart'></i></li>
+                <li id="total-display">&#36;0.00</li>
+                <a style="color:white" href="cart.html"><li><i class='fas fa-shopping-cart'></i></li></a> 
 
             </ul>
 
-            <i class="fa fa-bars"></i>
+            <i class="fa fa-bars" ></i>
         </nav>
 
     </header>
@@ -74,8 +74,13 @@
                 <option value="montres">montres</option>
                 <option value="chaussures">Chaussures</option>
             </select>
-       
-     
+            <div class="range-sel">
+            <label classs="prix-filtre" for="priceRange">sorting by price: </label>
+            <input type="range" id="priceRange" min="0" max="100" step="1" value="0" onchange="filterByPrice(this.value)">
+            <p> <span id="priceValue">0</span></p>
+            </div>
+            
+            
         </div>
       
     </div>
@@ -83,7 +88,7 @@
         <div class="row">
 
 
-            <div data-category="t-shirts" class="col-4">
+            <div data-category="t-shirts" data-price="10" class="col-4 produit" onclick="productDetails(event)" >
                 <img src="Images/product-1.jpg">
                 <h4>Red Printed T-shirt</h4>
                 <div class="rating">
@@ -93,15 +98,15 @@
                     <i class="fa fa-star" aria-hidden="true"></i>
                     <i class="fa fa-star-o" aria-hidden="true"></i>
                 </div>
-                <p>$50.00</p>
+                <p>$10.00</p>
                 <div class="hover-container">
-                    <button class="hidden-button">Add to cart</button>
+                    <button class="hidden-button" onclick="event.stopPropagation(); addToCart(event)">Add to cart</button>
                 </div>
             </div>
 
-            <div data-category="chaussures" class="col-4">
+            <div data-category="chaussures" data-price="20" class="col-4 produit" onclick="productDetails(event)">
                 <img src="Images/product-2.jpg">
-                <h4>Red Printed T-shirt</h4>
+                <h4> black& white Basket </h4>
                 <div class="rating">
                     <i class="fa fa-star" aria-hidden="true"></i>
                     <i class="fa fa-star" aria-hidden="true"></i>
@@ -109,15 +114,15 @@
                     <i class="fa fa-star" aria-hidden="true"></i>
                     <i class="fa fa-star-o" aria-hidden="true"></i>
                 </div>
-                <p>$50.00</p>
+                <p>$20.00</p>
                 <div class="hover-container">
-                    <button class="hidden-button">Add to cart</button>
+                    <button class="hidden-button" onclick="event.stopPropagation(); addToCart(event)">Add to cart</button>
                 </div>
             </div>
 
-            <div data-category="pantalon" class="col-4">
+            <div data-category="pantalon" data-price="30" class="col-4 produit" onclick="productDetails(event)">
                 <img src="Images/product-3.jpg">
-                <h4>Red Printed T-shirt</h4>
+                <h4>Grey pent</h4>
                 <div class="rating">
                     <i class="fa fa-star" aria-hidden="true"></i>
                     <i class="fa fa-star" aria-hidden="true"></i>
@@ -125,15 +130,15 @@
                     <i class="fa fa-star-half-o" aria-hidden="true"></i>
                     <i class="fa fa-star-o" aria-hidden="true"></i>
                 </div>
-                <p>$50.00</p>
+                <p>$30.00</p>
                 <div class="hover-container">
-                    <button class="hidden-button">Add to cart</button>
+                    <button class="hidden-button" onclick="event.stopPropagation(); addToCart(event)">Add to cart</button>
                 </div>
             </div>
 
-            <div data-category="t-shirts" class="col-4">
+            <div data-category="t-shirts" data-price="40" class="col-4 produit" onclick="productDetails(event)">
                 <img src="Images/product-4.jpg">
-                <h4>Red Printed T-shirt</h4>
+                <h4>Dark blue T-shirt</h4>
                 <div class="rating">
                     <i class="fa fa-star" aria-hidden="true"></i>
                     <i class="fa fa-star" aria-hidden="true"></i>
@@ -142,9 +147,9 @@
                     <i class="fa fa-star-half-o" aria-hidden="true"></i>
 
                 </div>
-                <p>$50.00</p>
+                <p>$40.00</p>
                 <div class="hover-container">
-                    <button class="hidden-button">Add to cart</button>
+                    <button class="hidden-button" onclick="event.stopPropagation(); addToCart(event)">Add to cart</button>
                 </div>
             </div>
         </div>
@@ -153,9 +158,9 @@
 
         <div class="row">
 
-            <div data-category=" chaussures" class="col-4">
+            <div data-category=" chaussures" data-price="50" class="col-4 produit"  onclick="productDetails(event)">
                 <img src="Images/product-5.jpg">
-                <h4>Red Printed T-shirt</h4>
+                <h4>white Baskets</h4>
                 <div class="rating">
                     <i class="fa fa-star" aria-hidden="true"></i>
                     <i class="fa fa-star" aria-hidden="true"></i>
@@ -165,13 +170,13 @@
                 </div>
                 <p>$50.00</p>
                 <div class="hover-container">
-                    <button class="hidden-button">Add to cart</button>
+                    <button class="hidden-button" onclick="event.stopPropagation(); addToCart(event)">Add to cart</button>
                 </div>
             </div>
 
-            <div data-category="t-shirts" class="col-4">
+            <div data-category="t-shirts" data-price="60" class="col-4 produit"  onclick="productDetails(event)">
                 <img src="Images/product-6.jpg">
-                <h4>Red Printed T-shirt</h4>
+                <h4>Black T-shirt</h4>
                 <div class="rating">
                     <i class="fa fa-star" aria-hidden="true"></i>
                     <i class="fa fa-star" aria-hidden="true"></i>
@@ -179,15 +184,15 @@
                     <i class="fa fa-star" aria-hidden="true"></i>
                     <i class="fa fa-star-o" aria-hidden="true"></i>
                 </div>
-                <p>$50.00</p>
+                <p>$60.00</p>
                 <div class="hover-container">
-                    <button class="hidden-button">Add to cart</button>
+                    <button class="hidden-button" onclick="event.stopPropagation(); addToCart(event)">Add to cart</button>
                 </div>
             </div>
 
-            <div data-category=" chaussettes" class="col-4">
+            <div data-category=" chaussettes" data-price="70" class="col-4 produit"  onclick="productDetails(event)">
                 <img src="Images/product-7.jpg">
-                <h4>Red Printed T-shirt</h4>
+                <h4>chaussettes</h4>
                 <div class="rating">
                     <i class="fa fa-star" aria-hidden="true"></i>
                     <i class="fa fa-star" aria-hidden="true"></i>
@@ -195,15 +200,15 @@
                     <i class="fa fa-star-half-o" aria-hidden="true"></i>
                     <i class="fa fa-star-o" aria-hidden="true"></i>
                 </div>
-                <p>$50.00</p>
+                <p>$70.00</p>
                 <div class="hover-container">
-                    <button class="hidden-button">Add to cart</button>
+                    <button class="hidden-button" onclick="event.stopPropagation(); addToCart(event)">Add to cart</button>
                 </div>
             </div>
 
-            <div data-category=" montres" class="col-4">
+            <div data-category=" montres" data-price="80" class="col-4 produit"  onclick="productDetails(event)">
                 <img src="Images/product-8.jpg">
-                <h4>Red Printed T-shirt</h4>
+                <h4>Black watch</h4>
                 <div class="rating">
                     <i class="fa fa-star" aria-hidden="true"></i>
                     <i class="fa fa-star" aria-hidden="true"></i>
@@ -212,16 +217,16 @@
                     <i class="fa fa-star-half-o" aria-hidden="true"></i>
 
                 </div>
-                <p>$50.00</p>
+                <p>$80.00</p>
                 <div class="hover-container">
-                    <button class="hidden-button">Add to cart</button>
+                    <button class="hidden-button" onclick="event.stopPropagation(); addToCart(event)">Add to cart</button>
                 </div>
             </div>
         </div>
         <div class="row ">
-            <div data-category="montres" class="col-4">
+            <div data-category="montres" data-price="90" class="col-4 produit"  onclick="productDetails(event)">
                 <img src="Images/product-9.jpg">
-                <h4>Red Printed T-shirt</h4>
+                <h4>grey watch</h4>
                 <div class="rating">
                     <i class="fa fa-star" aria-hidden="true"></i>
                     <i class="fa fa-star" aria-hidden="true"></i>
@@ -229,15 +234,15 @@
                     <i class="fa fa-star" aria-hidden="true"></i>
                     <i class="fa fa-star-o" aria-hidden="true"></i>
                 </div>
-                <p>$50.00</p>
+                <p>$90.00</p>
                 <div class="hover-container">
-                    <button class="hidden-button">Add to cart</button>
+                    <button class="hidden-button" onclick="event.stopPropagation(); addToCart(event)">Add to cart</button>
                 </div>
             </div>
 
-            <div data-category=" chaussures" class="col-4">
+            <div data-category=" chaussures" data-price="100" class="col-4 produit"  onclick="productDetails(event)">
                 <img src="Images/product-10.jpg">
-                <h4>Red Printed T-shirt</h4>
+                <h4>Black & Red Basket</h4>
                 <div class="rating">
                     <i class="fa fa-star" aria-hidden="true"></i>
                     <i class="fa fa-star" aria-hidden="true"></i>
@@ -245,15 +250,15 @@
                     <i class="fa fa-star" aria-hidden="true"></i>
                     <i class="fa fa-star-o" aria-hidden="true"></i>
                 </div>
-                <p>$50.00</p>
+                <p>$100.00</p>
                 <div class="hover-container">
-                    <button class="hidden-button">Add to cart</button>
+                    <button class="hidden-button" onclick="event.stopPropagation(); addToCart(event)">Add to cart</button>
                 </div>
             </div>
 
-            <div data-category=" chaussures" class="col-4">
+            <div data-category=" chaussures" data-price="50" class="col-4 produit"  onclick="productDetails(event)">
                 <img src="Images/product-11.jpg">
-                <h4>Red Printed T-shirt</h4>
+                <h4>Grey Basket</h4>
                 <div class="rating">
                     <i class="fa fa-star" aria-hidden="true"></i>
                     <i class="fa fa-star" aria-hidden="true"></i>
@@ -263,13 +268,13 @@
                 </div>
                 <p>$50.00</p>
                 <div class="hover-container">
-                    <button class="hidden-button">Add to cart</button>
+                    <button class="hidden-button" onclick="event.stopPropagation(); addToCart(event)">Add to cart</button>
                 </div>
             </div>
 
-            <div data-category=" pantalon" class="col-4">
+            <div data-category=" pantalon" data-price="50" class="col-4 produit"  onclick="productDetails(event)">
                 <img src="Images/product-12.jpg">
-                <h4>Red Printed T-shirt</h4>
+                <h4>Black pent</h4>
                 <div class="rating">
                     <i class="fa fa-star" aria-hidden="true"></i>
                     <i class="fa fa-star" aria-hidden="true"></i>
@@ -280,7 +285,7 @@
                 </div>
                 <p>$50.00</p>
                 <div class="hover-container">
-                    <button class="hidden-button">Add to cart</button>
+                    <button class="hidden-button" onclick="event.stopPropagation(); addToCart(event)">Add to cart</button>
                 </div>
             </div>
         </div>
@@ -350,6 +355,7 @@
 
     <!-----------------JS----------------------->
 
+    <script src="js/cart.js"></script>
     <script src="js/script.js"></script>
     <script src="js/selection.js"></script>
 

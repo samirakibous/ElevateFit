@@ -345,6 +345,15 @@ select{
 select:focus{
     outline: none;/*the issue was when create red border above, it shows red border but upon selecting other option it again becomes black, so we set outline none upon clicking and for clicking or tabing, focus is used*/ 
 }
+.range-sel{
+    display: flex;
+    border: 1px solid #ff523b; 
+    padding: 5px;
+ 
+}
+.prix-filtre{
+    font-family: 'Poppins', sans-serif;
+}
 .page-btn{
     margin: 0 auto 80px;
 }
