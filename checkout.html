@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/detail.css" />
+    <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+  />
+  <!---- icon cdn link---->
+</head>
+  <title>Payment Details</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+    
+
+    
+    .payment-container {
+      display: flex;
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 1000px;
+      overflow: hidden;
+    }
+    
+    .payment-details {
+      flex: 1;
+      padding: 40px;
+    }
+
+    h2 {
+      font-size: 24px;
+      margin-bottom: 24px;
+      font-weight: 600;
+    }
+    
+    .form-group {
+      margin-bottom: 20px;
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 8px;
+      color: #4b5563;
+      font-size: 14px;
+    }
+    
+    input[type="text"], 
+    input[type="email"] {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #d1d5db;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+    
+    .row {
+      display: flex;
+      gap: 16px;
+    }
+    
+    .col {
+      flex: 1;
+    }
+   
+
+    .price-details {
+      margin-top: 24px;
+      border-top: 1px solid #e5e7eb;
+      padding-top: 16px;
+    }
+    
+    .price-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 12px;
+      color: #4b5563;
+    }
+    
+    .total-row {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 16px;
+      font-weight: 600;
+      font-size: 18px;
+      border-top: 1px solid #e5e7eb;
+      padding-top: 16px;
+    }
+    
+    .btn-primary {
+      background-color: #2563eb;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      padding: 14px;
+      width: 100%;
+      font-size: 16px;
+      font-weight: 500;
+      cursor: pointer;
+      margin-top: 24px;
+    }
+    
+    .btn-primary:hover {
+      background-color: #1d4ed8;
+    }
+    
+    .summary-header {
+      text-align: center;
+      margin-bottom: 40px;
+      margin-top: 40px;
+    }
+    
+    .summary-header h3 {
+      font-size: 24px;
+      margin-bottom: 16px;
+    }
+    
+    .plan-box {
+      background-color: white;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    
+    .plan-header {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 16px;
+    }
+    
+    .plan-icon {
+      background-color: #f97316;
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      margin-right: 12px;
+    }
+    
+    .plan-name {
+      color: #111827;
+      font-weight: 500;
+    }
+    
+    .plan-price {
+      color: #111827;
+      font-size: 20px;
+      font-weight: 600;
+      margin-top: 4px;
+    }
+    
+    .features-list {
+      margin-top: 24px;
+    }
+    
+    .feature-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 16px;
+      color: #6b7280;
+    }
+    
+    .feature-item::before {
+      content: "•";
+      color: #3b82f6;
+      font-size: 24px;
+      margin-right: 12px;
+    }
+    
+    .modify-plan {
+      display: inline-block;
+      margin-top: 16px;
+      color: #374151;
+      text-decoration: none;
+      border-bottom: 2px solid #6b7280;
+      padding-bottom: 4px;
+    }
+    
+    .success-message {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: white;
+      border-radius: 8px;
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    
+    .success-icon {
+      background-color: #10b981;
+      color: white;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 12px;
+    }
+    
+    .success-text {
+      font-weight: 500;
+    }
+    
+    /* Add blue dot with white center */
+    .blue-dot {
+      background-color: #3b82f6;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      position: relative;
+      margin: 0 auto 20px;
+    }
+    
+    .blue-dot::after {
+      content: "";
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      background-color: white;
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    @media (max-width: 768px) {
+      .payment-container {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+     <!--making header-->
+     <header>
+        <nav id="nav">
+          <img src="images/logo-white.png" class="logo" />
+  
+          <ul class="menu-bar-side">
+            <li><a href="index.html" style="all: unset">Home</a></li>
+            <li><a href="Products.html" style="all: unset">Shope</a></li>
+            <li><a href="#" style="all: unset">about</a></li>
+            <li><a href="#" style="all: unset">contact us</a></li>
+          </ul>
+  
+          <ul class="menu-bar">
+            <li id="total-display">&#36;0.00</li>
+            <a style="color: white" href="cart.html"
+              ><li><i class="fas fa-shopping-cart"></i></li
+            ></a>
+          </ul>
+  
+          <i class="fa fa-bars"></i>
+        </nav>
+      </header>
+  <div class="payment-container">
+    <div class="payment-details">
+      <h2>Payment details</h2>
+      
+      <div class="form-group">
+        <label for="email">Email address</label>
+        <input type="email" id="email" placeholder="vlockn@gmail" value="vlockn@gmail">
+      </div>
+      
+      <div class="form-group">
+        <label for="card-number">Credit Card Number</label>
+        <input type="text" id="card-number" placeholder="x x x x   x x x x   x x x x   x x x x">
+      </div>
+      
+      <div class="row">
+        <div class="col">
+          <div class="form-group">
+            <label for="expiry">Expiry Date</label>
+            <input type="text" id="expiry" placeholder="mm / yy">
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-group">
+            <label for="cvv">CVV</label>
+            <input type="text" id="cvv" placeholder="x x x">
+          </div>
+        </div>
+      </div>
+      
+      <div class="price-details">
+        <div class="price-row">
+          <span>Subtotal</span>
+          <span></span>
+        </div>
+        <div class="price-row">
+          <span>Platform Fee</span>
+          <span></span>
+        </div>
+        <div class="total-row">
+          <span>Total Amount</span>
+          <span></span>
+        </div>
+      </div>
+      
+      <button class="btn-primary">Make payment</button>
+    </div>
+    
+  </div>
+     <!-------footer------->
+     <div class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="footer-col-1">
+              <h3>Download Our App</h3>
+              <p>Download App for Android and Ios mobile phone.</p>
+  
+              <div class="app-logo">
+                <img src="images/play-store.png" />
+                <img src="images/app-store.png" />
+              </div>
+            </div>
+  
+            <div class="footer-col-2">
+              <img src="images/logo-white.png" />
+              <p>
+                Our purpose is To Sustainably Make the Pleasure and Benefits of
+                Sports Accessible to the Many.
+              </p>
+            </div>
+  
+            <div class="footer-col-3">
+              <h3>Useful Links</h3>
+              <ul>
+                <li>Coupons</li>
+                <li>Blog Post</li>
+                <li>Return Policy</li>
+                <li>Join Affiliate</li>
+              </ul>
+            </div>
+  
+            <div class="footer-col-4">
+              <h3>Follow Us</h3>
+              <ul>
+                <li>Facebook</li>
+                <li>Twitter</li>
+                <li>Instagram</li>
+                <li>Youtube</li>
+              </ul>
+            </div>
+          </div>
+          <!--add horizontal line and copyright text along with clickable link-->
+          <hr />
+          <a href="" class="copyright"
+            >Copyright 2024 - Made with ❤️ LorenzCipher</a
+          >
+        </div>
+      </div>
+</body>
+</html>
